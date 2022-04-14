@@ -50,7 +50,9 @@
                 else if (animal is Cat) Console.ForegroundColor = ConsoleColor.Yellow;
                 else if (animal is Bird) Console.ForegroundColor = ConsoleColor.Cyan;
 
-                if (!animal.Play())
+                if (animal.Play())
+                    Console.Write($"{animal.GetClassName()} => Played".PadRight(15) + " | ");
+                else
                 {
                     Random rand = new Random();
                     if(rand.Next() % 2 == 0)
@@ -68,7 +70,11 @@
                 animal.ShowStatus();
             }
 
-            Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.White;
+            // Console.Write("\nPress any key to continue...");
+            // Console.ReadKey();
+
+            Thread.Sleep(1000);
             Console.Clear();
 
             if (i % 10 == 0) if (DoBreak()) break;
