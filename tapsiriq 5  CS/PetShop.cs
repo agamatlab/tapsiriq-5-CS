@@ -51,18 +51,18 @@
                 else if (animal is Bird) Console.ForegroundColor = ConsoleColor.Cyan;
 
                 if (animal.Play())
-                    Console.Write($"{animal.GetClassName()} => Played".PadRight(15) + " | ");
+                    Console.Write($"{animal.GetClassName()} => Played".PadRight(16) + " | ");
                 else
                 {
                     Random rand = new Random();
                     if(rand.Next() % 2 == 0)
                     {
-                        Console.Write($"{animal.GetClassName()} => Sleep".PadRight(15) + " | ");
+                        Console.Write($"{animal.GetClassName()} => Sleep".PadRight(16) + " | ");
                         animal.Sleep();
                     }
                     else
                     {
-                        Console.Write($"{animal.GetClassName()} => Eat".PadRight(15) + " | ");
+                        Console.Write($"{animal.GetClassName()} => Eat".PadRight(16) + " | ");
                         animal.Eat();
                     }
                 }
